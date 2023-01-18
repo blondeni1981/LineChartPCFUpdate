@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="LineChart2" constructor="LineChart2" version="1.0.0"
+   display-name-key="LineChart2" description-key="LineChart2 description" control-type="virtual" >
+   
+    <external-service-usage enabled="false">
+    </external-service-usage>
+ <type-group name="numbers">
+        <type>Whole.None</type>
+        <type>Currency</type>
+        <type>FP</type>
+        <type>Decimal</type>
+      </type-group>
+      <property name="title"
+                display-name-key="TitleValue"
+                description-key="Title for the Chart"
+                of-type="SingleLine.Text"    
+                usage="input" />
+                <property name="titlePaddingTop"
+                display-name-key="titlePadding-top"
+                description-key="Whole Number Value for the title top padding"
+                of-type="Whole.None"    
+                usage="input" />
+      <property name="titlePaddingbottom"
+                display-name-key="TtitlePaddingbottom"
+                description-key="Whole Number Value for the title bottom padding"
+                of-type="Whole.None"    
+                usage="input" />
+      <property name="lineColor" 
+                display-name-key="Line Color Value" 
+                description-key="Line Color Value" 
+                of-type="SingleLine.Text" 
+                usage="input" />
+
+      <property name="displayTitle" 
+                display-name-key="Display Title" 
+                description-key="display Title" 
+                usage="input" 
+                of-type="TwoOptions" />
+
+      <property name="titleFontSize"
+                display-name-key="Title Font Size"
+                description-key="Whole Number Value for the Font of the Title"
+                of-type="Whole.None"    
+                usage="input" />
+      <!-- <property name="titleFontSize"
+                display-name-key="Title Font Size"
+                description-key="Whole Number Value for the Font of the Title"
+                of-type="Whole.None"    
+                usage="input" /> -->
+<data-set name="items" display-name-key="Items">
+    <property-set name="x-axis" display-name-key="X Axis" description-key="X-axis values" required="true" of-type="DateAndTime.DateAndTime" usage="bound" required="true"/>
+    <property-set name="y-axis" display-name-key="Y Axis" description-key="Y-axis values" of-type-group="numbers" usage="bound" required="true" />
+    </data-set>
+    <resources>
+      <code path="index.ts" order="1"/>
+      <platform-library name="React" version="16.8.6" />
+      <platform-library name="Fluent" version="8.29.0" />
+      <!-- UNCOMMENT TO ADD MORE RESOURCES
+      <css path="css/LineChart2.css" order="1" />
+      <resx path="strings/LineChart2.1033.resx" version="1.0.0" />
+      -->
+    </resources>
+  
+  </control>
+</manifest>
