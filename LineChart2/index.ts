@@ -30,8 +30,9 @@ export class LineChart2 implements ComponentFramework.ReactControl<IInputs, IOut
              fontSize: this.undefinedIfZero(context.parameters.titleFontSize),
              bottomPadding: this.undefinedIfZero(context.parameters.titlePaddingbottom),
              topPadding: this.undefinedIfZero(context.parameters.titlePaddingTop),
-             // postionTitle: context.parameters.positionTitle.raw ?? "",
-            lineColor: this._context.parameters.lineColor.raw ?? " "
+             displayTooltips: context.parameters.displayTooltip.raw,
+            lineColor: this._context.parameters.lineColor.raw ?? " ",
+            lineColor2: this._context.parameters.lineColor2.raw ?? " "
             
 
             };

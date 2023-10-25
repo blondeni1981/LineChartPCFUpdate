@@ -11,6 +11,10 @@
         <type>FP</type>
         <type>Decimal</type>
       </type-group>
+           <type-group name="date">
+      <type>DateAndTime.DateOnly</type>
+      <type>DateAndTime.DateAndTime</type>
+    </type-group>
       <property name="title"
                 display-name-key="TitleValue"
                 description-key="Title for the Chart"
@@ -27,10 +31,16 @@
                 of-type="Whole.None"    
                 usage="input" />
       <property name="lineColor" 
-                display-name-key="Line Color Value" 
+                display-name-key="Y1 Line Color" 
                 description-key="Line Color Value" 
                 of-type="SingleLine.Text" 
                 usage="input" />
+       <property name="lineColor2" 
+                display-name-key="Y2 Line Color" 
+                description-key="Line Color Value" 
+                of-type="SingleLine.Text" 
+                usage="input"
+                required="false" />
 
       <property name="displayTitle" 
                 display-name-key="Display Title" 
@@ -43,15 +53,18 @@
                 description-key="Whole Number Value for the Font of the Title"
                 of-type="Whole.None"    
                 usage="input" />
-      <!-- <property name="titleFontSize"
-                display-name-key="Title Font Size"
-                description-key="Whole Number Value for the Font of the Title"
-                of-type="Whole.None"    
-                usage="input" /> -->
+ <property name="displayTooltip"
+                display-name-key="Display Legend" 
+                description-key="display legend" 
+                usage="input" 
+                of-type="TwoOptions" 
+                required="false"/>
 <data-set name="items" display-name-key="Items">
-    <property-set name="x-axis" display-name-key="X Axis" description-key="X-axis values" required="true" of-type="DateAndTime.DateAndTime" usage="bound" required="true"/>
+    <property-set name="x-axis" display-name-key="X Axis" description-key="X-axis values" required="true" of-type-group="date" usage="bound"/>
     <property-set name="y-axis" display-name-key="Y Axis" description-key="Y-axis values" of-type-group="numbers" usage="bound" required="true" />
-    </data-set>
+    <property-set name="y2-axis" display-name-key="Y2 Axis" description-key="Y2-axis values" of-type-group="numbers" usage="bound" required="true" />
+
+</data-set>
     <resources>
       <code path="index.ts" order="1"/>
       <platform-library name="React" version="16.8.6" />
